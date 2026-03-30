@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --background: #edf3fb;
+  --foreground: #10192b;
+}
+
+.dark {
+  --background: #070c18;
+  --foreground: #f1f6ff;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-body);
+  --font-display: var(--font-display);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body), sans-serif;
+  background-image:
+    radial-gradient(circle at 12% 10%, rgba(56, 189, 248, 0.18), transparent 25%),
+    radial-gradient(circle at 84% 14%, rgba(6, 182, 212, 0.14), transparent 34%),
+    radial-gradient(circle at 74% 84%, rgba(14, 165, 233, 0.12), transparent 30%);
+  background-attachment: fixed;
+}
+
+.font-display {
+  font-family: var(--font-display), sans-serif;
+}
+
+* {
+  transition-property: background-color, border-color, color, box-shadow, transform;
+  transition-duration: 180ms;
+  transition-timing-function: ease;
+}
+
+*::selection {
+  background: rgba(14, 165, 233, 0.28);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
