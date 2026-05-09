@@ -32,8 +32,32 @@ export default function HeroSection() {
       >
         <HeroAnimation />
 
-        <div className="grid items-center gap-10 lg:grid-cols-[1.24fr_0.76fr]">
-          <div>
+        <div className="grid items-center gap-8 lg:grid-cols-[1.24fr_0.76fr]">
+
+          {/* Portrait — shows FIRST on mobile, hidden on desktop (shown in right col) */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="mx-auto w-32 sm:w-40 lg:hidden"
+          >
+            <div className="relative rounded-3xl border border-white/20 bg-white/60 p-2 shadow-xl shadow-cyan-950/15 backdrop-blur-xl dark:bg-white/10">
+              <div className="absolute -inset-0.5 -z-10 rounded-3xl bg-linear-to-br from-sky-300/60 via-cyan-300/40 to-blue-300/60 blur-md" />
+              <div className="relative overflow-hidden rounded-2xl">
+                <Image
+                  src="/profile_destura.jpg"
+                  alt="Stephanie Destura profile"
+                  width={160}
+                  height={160}
+                  priority
+                  className="h-auto w-full object-cover"
+                />
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Text content */}
+          <div className="text-center lg:text-left">
             <motion.p
               initial={shouldReduceMotion ? false : { opacity: 0, y: 16 }}
               animate={shouldReduceMotion ? undefined : { opacity: 1, y: 0 }}
@@ -43,7 +67,7 @@ export default function HeroSection() {
               Portfolio 2026
             </motion.p>
 
-            <h1 className="font-display text-5xl leading-[0.96] font-semibold tracking-[-0.03em] text-zinc-900 sm:text-6xl lg:text-7xl dark:text-zinc-100">
+            <h1 className="font-display text-4xl leading-[0.96] font-semibold tracking-[-0.03em] text-zinc-900 sm:text-5xl lg:text-7xl dark:text-zinc-100">
               {headingWords.map((word, index) => (
                 <motion.span
                   key={`${word}-${index}`}
@@ -51,11 +75,7 @@ export default function HeroSection() {
                   animate={
                     shouldReduceMotion
                       ? undefined
-                      : {
-                          opacity: 1,
-                          y: 0,
-                          filter: "blur(0px)",
-                        }
+                      : { opacity: 1, y: 0, filter: "blur(0px)" }
                   }
                   transition={{
                     duration: 0.55,
@@ -77,7 +97,7 @@ export default function HeroSection() {
               className="mt-5 text-lg text-zinc-700 dark:text-zinc-300"
             >
               <TypingText
-                words={["Full-Stack Developer", "Frontend Engineer", "Web Developer"]}
+                words={["Full-Stack Web Developer", "Software Developer", "Web Application Developer"]}
                 className="font-semibold text-cyan-800 dark:text-cyan-200"
               />
             </motion.p>
@@ -95,7 +115,7 @@ export default function HeroSection() {
               initial={shouldReduceMotion ? false : { opacity: 0, y: 14 }}
               animate={shouldReduceMotion ? undefined : { opacity: 1, y: 0 }}
               transition={{ duration: 0.52, delay: shouldReduceMotion ? 0 : 0.58, ease: [0.22, 1, 0.36, 1] }}
-              className="mt-9 flex flex-wrap gap-3.5"
+              className="mt-9 flex flex-wrap justify-center gap-3.5 lg:justify-start"
             >
               <a
                 href="#projects"
@@ -113,12 +133,13 @@ export default function HeroSection() {
             </motion.div>
           </div>
 
+          {/* Portrait — desktop only (right column) */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.15 }}
             style={shouldReduceMotion ? undefined : { y: portraitY, scale: portraitScale }}
-            className="mx-auto w-full max-w-sm"
+            className="mx-auto hidden w-full max-w-sm lg:block"
           >
             <div className="relative rounded-4xl border border-white/20 bg-white/60 p-3 shadow-2xl shadow-cyan-950/15 backdrop-blur-xl dark:bg-white/10">
               <div className="absolute -inset-0.5 -z-10 rounded-4xl bg-linear-to-br from-sky-300/60 via-cyan-300/40 to-blue-300/60 blur-md" />
@@ -134,6 +155,7 @@ export default function HeroSection() {
               </div>
             </div>
           </motion.div>
+
         </div>
       </motion.div>
     </section>

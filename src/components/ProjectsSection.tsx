@@ -3,30 +3,23 @@ import Section from "@/components/Section";
 
 const projects = [
   {
-    title: "Gym Membership Management System",
+    title: "Fitness Gym Membership Management System",
+    image: "/gym.jpg",
     description:
       "A management platform for handling member registration, payment status, and attendance tracking for local gyms.",
     stack: ["HTML", "CSS", "JavaScript", "MySQL"],
     accent: "from-sky-400/75 to-cyan-300/75",
-    githubUrl: "https://github.com/",
+    githubUrl: "https://github.com/alexuslax/gym",
     demoUrl: "",
   },
   {
-    title: "Movie Watchlist App",
+    title: "University Research and Development Services System",
+    image: "/urds.jpg",
     description:
-      "A responsive app to search movies, save personal watchlists, and track watched titles with a clean dashboard UI.",
-    stack: ["JavaScript", "Tailwind", "API Integration"],
-    accent: "from-indigo-400/75 to-blue-300/75",
-    githubUrl: "https://github.com/",
-    demoUrl: "",
-  },
-  {
-    title: "POS System",
-    description:
-      "A point-of-sale system for small businesses with product records, real-time billing, and transaction history.",
-    stack: ["Python", "MySQL", "UI Design"],
-    accent: "from-cyan-400/75 to-emerald-300/75",
-    githubUrl: "https://github.com/",
+      "A portal for managing research project requests, faculty assignments, and lab/service tracking for university R&D operations.",
+    stack: ["PHP", "JavaScript", "MySQL"],
+    accent: "from-violet-400/75 to-fuchsia-300/75",
+    githubUrl: "https://github.com/alexuslax/urds",
     demoUrl: "",
   },
 ];
@@ -48,6 +41,7 @@ export default function ProjectsSection() {
             accent={project.accent}
             githubUrl={project.githubUrl}
             demoUrl={project.demoUrl || undefined}
+            image={project.image}
             delay={index * 0.08}
           />
         ))}
