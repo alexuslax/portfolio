@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --background: #eaf1fa;
+  --foreground: #0b1729;
+}
+
+.dark {
+  --background: #060d1a;
+  --foreground: #eef5ff;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-body);
+  --font-display: var(--font-display);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body), sans-serif;
+  line-height: 1.6;
+  letter-spacing: -0.01em;
+  background-image:
+    radial-gradient(circle at 10% 6%, rgba(56, 189, 248, 0.2), transparent 24%),
+    radial-gradient(circle at 85% 10%, rgba(6, 182, 212, 0.14), transparent 33%),
+    radial-gradient(circle at 76% 88%, rgba(14, 165, 233, 0.12), transparent 30%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.45), rgba(255, 255, 255, 0));
+  background-attachment: fixed;
+}
+
+.font-display {
+  font-family: var(--font-display), sans-serif;
+}
+
+* {
+  transition-property: background-color, border-color, color, box-shadow, transform, filter;
+  transition-duration: 220ms;
+  transition-timing-function: ease;
+}
+
+a,
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+:focus-visible {
+  outline: 2px solid rgba(6, 182, 212, 0.65);
+  outline-offset: 2px;
+}
+
+*::selection {
+  background: rgba(14, 165, 233, 0.28);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
