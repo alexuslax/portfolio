@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Github, ExternalLink, ArrowUpRight } from "lucide-react";
+import { ExternalLink, ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 
 
@@ -9,7 +9,7 @@ type ProjectCardProps = {
   title: string;
   description: string;
   stack: string[];
-  githubUrl: string;
+  projectUrl: string;
   demoUrl?: string;
   accent: string;
   image?: string; 
@@ -20,7 +20,7 @@ export default function ProjectCard({
   title,
   description,
   stack,
-  githubUrl,
+  projectUrl,
   demoUrl,
   accent,
   image,
@@ -89,14 +89,14 @@ export default function ProjectCard({
         {/* Links */}
         <div className="flex items-center gap-2">
           <a
-            href={githubUrl}
+            href={projectUrl}
             target="_blank"
             rel="noopener noreferrer"
             onClick={(e) => e.stopPropagation()}
             className="inline-flex flex-1 items-center justify-center gap-1.5 rounded-full border border-zinc-200 bg-zinc-50 px-4 py-2 text-xs font-semibold text-zinc-700 transition hover:bg-zinc-100 hover:text-zinc-900 dark:border-white/10 dark:bg-white/5 dark:text-zinc-300 dark:hover:bg-white/10 dark:hover:text-zinc-100"
           >
-            <Github className="h-3.5 w-3.5" />
-            GitHub
+            <ExternalLink className="h-3.5 w-3.5" />
+            Live Site
           </a>
 
           {demoUrl && (

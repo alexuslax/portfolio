@@ -9,7 +9,7 @@ const projects = [
       "A management platform for handling member registration, payment status, and attendance tracking for local gyms.",
     stack: ["HTML", "CSS", "JavaScript", "MySQL"],
     accent: "from-sky-400/75 to-cyan-300/75",
-    githubUrl: "https://destura-gym.up.railway.app/login.php",
+    projectUrl: "https://destura-gym.up.railway.app/login.php",
     demoUrl: "",
   },
   {
@@ -19,7 +19,7 @@ const projects = [
       "A portal for managing research project requests, faculty assignments, and lab/service tracking for university R&D operations.",
     stack: ["PHP", "JavaScript", "MySQL"],
     accent: "from-violet-400/75 to-fuchsia-300/75",
-    githubUrl: "https://github.com/alexuslax/urds",
+    projectUrl: "https://github.com/alexuslax/urds",
     demoUrl: "",
   },
 ];
@@ -39,7 +39,7 @@ export default function ProjectsSection() {
             description={project.description}
             stack={project.stack}
             accent={project.accent}
-            githubUrl={project.githubUrl}
+            projectUrl={project.projectUrl}
             demoUrl={project.demoUrl || undefined}
             image={project.image}
             delay={index * 0.08}
