@@ -19,7 +19,7 @@ const projects = [
       "A portal for managing research project requests, faculty assignments, and lab/service tracking for university R&D operations.",
     stack: ["PHP", "JavaScript", "MySQL"],
     accent: "from-violet-400/75 to-fuchsia-300/75",
-    projectUrl: "https://github.com/alexuslax/urds",
+    projectUrl: "https://destura-urds.up.railway.app/login.html",
     demoUrl: "",
   },
 ];
