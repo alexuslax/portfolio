@@ -9,7 +9,7 @@ const projects = [
       "A management platform for handling member registration, payment status, and attendance tracking for local gyms.",
     stack: ["HTML", "CSS", "JavaScript", "MySQL"],
     accent: "from-sky-400/75 to-cyan-300/75",
-    githubUrl: "https://github.com/alexuslax/gym",
+    githubUrl: "https://destura-gym.up.railway.app/login.php",
     demoUrl: "",
   },
   {
