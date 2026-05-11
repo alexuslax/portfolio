@@ -96,7 +96,7 @@ export default function ProjectCard({
             className="inline-flex flex-1 items-center justify-center gap-1.5 rounded-full border border-zinc-200 bg-zinc-50 px-4 py-2 text-xs font-semibold text-zinc-700 transition hover:bg-zinc-100 hover:text-zinc-900 dark:border-white/10 dark:bg-white/5 dark:text-zinc-300 dark:hover:bg-white/10 dark:hover:text-zinc-100"
           >
             <ExternalLink className="h-3.5 w-3.5" />
-            View Live
+            Live Website
           </a>
 
           {demoUrl && (
